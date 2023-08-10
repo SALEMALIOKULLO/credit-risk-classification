@@ -1,34 +1,34 @@
 # credit-risk-classification
 Peer-to-peer lending services company building a model that can identify creditworthiness of borrowers.
 
-# Module 12 Report Template
+# Module 20 Report Template
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+## Purpose
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+The purpose of this analysis is to generate a model that will accurately distinguish between "healthy loans" and "high risk loans". Each applicant is identified based on apllication factors which include loan size, interest rate, the borrowers's income, debt to income ratio, number of accounts, derogatory marks, and total debt. First thing needed was to check the loan status then find the value count of the dataset which was roughly 75,036 applicants. We were then asssigned to split the data into training and testing datasets. Next step required us to make a logistic regression model with the training data to make predictions of the oringinal data and resampled data, Finally, done with all those steps we evaluated the models performance. 
+
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+* Machine Learning Model 1: (Original data) 
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+  * Accuracy: 99% (balanced accuracy score)
+  * Precision: 85% (average for predicting high risk loans) and 100%(average for healthy loans).
+  * Recall: 91% (average for high risk loans) and 99%(average for healthy loans).
 
+* Machine Learning Model 2: (Resampled data)
+    
+  * Accuracy: 99% (balanced accuracy score)
+  * Precision: 99% (healthy loans and high risk loans)
+  * Recall: 99% (healthy loans and high risk loans)
 
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+With the first Logistic Regression model, using the original data, it does very well at predicitng 'healthy loans' with accuracy, precision, and recall test data at 99%. However, when identifying 'high risk loans', it still does very well but noticably worse with precision score of 85% and recall score of 91%. This is likely related to the dataset imbalance with only about 3 percent of the apllicantions were considered high risk loanies. The second Logistic Regression model uses resampled data and perfroms noticably better at identifying the 'high risk loans'. 
 
-If you do not recommend any of the models, please justify your reasoning.
+Logistic Regression 2 seems to have fewer false predictions of testing data overall and would be the best model to use based on high accuracy. Based on the problem we are trying to solve, I would say it is more important to predict the '1's (high risk loans) because as a credit risk agency it is more important to disallow potential high risk loans based on the applicant factors. 
+
+
